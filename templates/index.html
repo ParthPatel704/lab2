@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Species Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://th.bing.com/th/id/R.4a29b34fd43fa3dfdbb04161e4f59c38?rik=gO71bMlNjxLwBA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2faU7OjJQ.jpg&ehk=tlGlUzUrV7hzB%2fDHpaTlgU31CA1ialYat9ATb5aM7D4%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+        }
+
+        form {
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #666666;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fish Species Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="Weight">Weight (g):</label>
+            <input type="text" id="Weight" name="Weight" placeholder="Enter weight" required>
+
+            <label for="Length1">Length1 (cm):</label>
+            <input type="text" id="Length1" name="Length1" placeholder="Enter length1" required>
+
+            <label for="Length2">Length2 (cm):</label>
+            <input type="text" id="Length2" name="Length2" placeholder="Enter length2" required>
+
+            <label for="Length3">Length3 (cm):</label>
+            <input type="text" id="Length3" name="Length3" placeholder="Enter length3" required>
+
+            <label for="Height">Height (cm):</label>
+            <input type="text" id="Height" name="Height" placeholder="Enter height" required>
+
+            <label for="Width">Width (cm):</label>
+            <input type="text" id="Width" name="Width" placeholder="Enter width" required>
+
+            <button type="submit">Predict Species</button>
+        </form>
+
+        {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
