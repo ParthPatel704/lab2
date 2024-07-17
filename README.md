@@ -30,3 +30,4 @@ Data labeling is the process of annotating datasets with meaningful labels that 
    - **Autonomous Vehicles**: Training models to recognize and respond to objects in the environment.
 
 Data labeling is foundational for creating high-quality datasets that drive the development and performance of AI models. Proper labeling directly impacts the accuracy and effectiveness of machine learning solutions across various industries.
+"# lab2" 
